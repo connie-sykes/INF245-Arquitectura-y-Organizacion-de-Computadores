@@ -8,7 +8,8 @@ def crear_mapa(size,cantidad_naves):
     *size: int, es el tamaño del mapa (size*size)
     *cantidad_naves: int, cantidad de naves a derribar en el mapa
     ***
-    (EXPLICAR QUÉ HACE LA FUNCION)
+    La funcion crea una lista de listas que simula una tabla de tamaño de nx2n donde n es el input size y donde en cada sublista
+    se agrega una letra X, Y o Z ,en posiciones aleatorias, x cantidad de veces donde x es el input cantidad-naves.
     '''
     listaposnaves = []
     lista = []
@@ -34,9 +35,10 @@ def crear_mapa(size,cantidad_naves):
 def visualizar_mapa(lista):
     '''
     ***
-    *lista: 
+    *lista: Es una lista de listas donde la sublista contiene variables de tipo strings ya creada con anterioridad.
     ***
-    (EXPLICAR QUÉ HACE LA FUNCION)
+    la funcion utiliza funciones de la librearia "PrettyTable" para lograr una visualizacion mas comoda 
+    en la terminal de una lista de listas creada anteriormente.
     '''
     tabla = PrettyTable()
     tabla.field_names = [''] + list(range(len(lista[0])))
@@ -199,12 +201,15 @@ def check_oct(input):
 def acierto(tupla,tipo,lista1,lista2):
     '''
     ***
-    *tupla: 
-    *tipo:
-    *lista1:
-    *lista2:
+    *tupla: Es una tupla de enteros. 
+    *tipo: corresponde a un entero entre 1 y 3 que representa el tipo de eleccion tomada.
+    *lista1: corresponde a una lista de listas de strings a comparar.
+    *lista2: Es una lista de tuplas de tipo entero de que se utilizara de comparacion.
     ***
-    (EXPLICAR QUE HACE LA FUNCION)
+    Primero verifica el valor del tipo para saber a que letra corresponde, luego utiliza la tupla ingresada "tupla"
+    para compararla con "lista2" para reconocer si existe la nave en esa posicion y de ser asi comparara la letra
+    del tipo con la letra de la tabla para verificar que si sea un acierto es decir que ambos sean del mismo tipo.
+    Finalmente retornara un entero dependiendo de la situacion en la que se encuentre.
     '''
     a="?"
     if tipo== 1:
