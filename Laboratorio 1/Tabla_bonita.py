@@ -3,6 +3,13 @@ from prettytable import PrettyTable
 
 # ---------------------------------------MAPA --------------------------------
 def crear_mapa(size,cantidad_naves):
+    '''
+    ***
+    *size: int, es el tamaño del mapa (size*size)
+    *cantidad_naves: int, cantidad de naves a derribar en el mapa
+    ***
+    (EXPLICAR QUÉ HACE LA FUNCION)
+    '''
     listaposnaves = []
     lista = []
     for i in range(0,size*2):
@@ -25,6 +32,12 @@ def crear_mapa(size,cantidad_naves):
     return(lista,listaposnaves)
 
 def visualizar_mapa(lista):
+    '''
+    ***
+    *lista: 
+    ***
+    (EXPLICAR QUÉ HACE LA FUNCION)
+    '''
     tabla = PrettyTable()
     tabla.field_names = [''] + list(range(len(lista[0])))
 
@@ -37,19 +50,35 @@ def visualizar_mapa(lista):
 # CONVERSIÓN DE COORDENADAS A BASE DECIMAL -----------------------------------------------------------
     
 def bin2dec(input_x,input_y):
+    '''
+    ***
+    *input_x: int, coordenada x a convertir
+    *input_y: int, coordenada y a convertir
+    ***
+    Itera inversamente el string aplicando el algoritmo del polinomio caracteristico, es decir,
+    va sumando acumulativamente el bit(1 o 0) multiplicado por base^posicion respectiva del bit
+    '''
     x = 0
     y = 0
     for i in range(len(str(input_x))):
         bit = int(input_x[i])
         x += bit * (2 ** (len(str(input_x)) - 1 - i))
-    print("x= "+str(x))
+
     for j in range(len(str(input_y))):
         bit = int(input_y[j])
         y += bit * (2 ** (len(str(input_y)) - 1 - j))
-    print("y= "+str(y))
+    
     return x, y
 
 def oct2dec(input_x,input_y):
+    '''
+    ***
+    *input_x: int, coordenada x a convertir
+    *input_y: int, coordenada y a convertir
+    ***
+    Itera inversamente el string aplicando el algoritmo del polinomio caracteristico, es decir,
+    va sumando acumulativamente el bit(numero entre 0-7) multiplicado por base^posicion respectiva del bit
+    '''
     x = 0
     y = 0
     for i in range(len(str(input_x))):
@@ -62,6 +91,15 @@ def oct2dec(input_x,input_y):
     return x, y
 
 def hex2dec(input_x,input_y):
+    '''
+    ***
+    *input_x: int, coordenada x a convertir
+    *input_y: int, coordenada y a convertir
+    ***
+    Itera inversamente el string aplicando el algoritmo del polinomio caracteristico, es decir,
+    va sumando acumulativamente el bit(numero entre 0-9) multiplicado por base^posicion respectiva del bit,
+    pero para el caso de las letras (a-f) se convierten a su numero respectivo (a=10, b=11, etc.)
+    '''
     x = 0
     y = 0
     
@@ -107,6 +145,13 @@ def hex2dec(input_x,input_y):
 
 #///// CHECKEO SI CORRESPONDE A LA BASE //////
 def check_bin(input):
+    '''
+    ***
+    *input: string, numero a corroborar su base
+    ***
+    Verifica que el input este compuesto solamente de 0 y 1, en caso de ser asi retorna True, caso contrario
+    retorna False
+    '''
     binario = list(input)
     for num in binario:
         if not (num == "1" or num == "0") :
@@ -114,6 +159,14 @@ def check_bin(input):
     return True
 
 def check_hex(input):
+    '''
+    ***
+    *input: string, numero a corroborar su base
+    ***
+    Verifica que el input este compuesto solamente de digitos [0-9] y/o letras [a-f].
+    Si el string comenzaba con un '0x', es removido del string.
+    En caso de que el string cumpla esas condiciones retorna True, caso contrario retorna False
+    '''
     abc = "abcdefABCDEF"
     dig = "0123456789"
     hexadecimal = list(input)
@@ -126,6 +179,14 @@ def check_hex(input):
     return True
 
 def check_oct(input):
+    '''
+    ***
+    *input: int, numero a corroborar su base
+    ***
+    Verifica que el input este compuesto solamente de digitos [0-7], 
+    en caso de ser asi retorna True, caso contrario
+    retorna False
+    '''
     base_octal="01234567"
     octal = list(input)
     for num in octal:
@@ -136,6 +197,15 @@ def check_oct(input):
 #//////////
 
 def acierto(tupla,tipo,lista1,lista2):
+    '''
+    ***
+    *tupla: 
+    *tipo:
+    *lista1:
+    *lista2:
+    ***
+    (EXPLICAR QUE HACE LA FUNCION)
+    '''
     a="?"
     if tipo== 1:
         a="X"
