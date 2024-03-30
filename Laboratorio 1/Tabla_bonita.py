@@ -243,3 +243,5 @@ while len(naves)!=0:
 
 if len(naves)==0:
     print("FIN DEL JUEGO!!!")
+
+    #check commit note
