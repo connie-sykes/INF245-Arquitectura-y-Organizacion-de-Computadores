@@ -17,4 +17,4 @@ sutileza de que se convierten los caracteres alfabeticos a su respectivo digito 
 
     /*****************Supuestos Utilizados**************\
 >Se asume que se ingresa una coordenada que esta dentro del mapa.
->
+>En caso de que existan dos barcos generados en un mismo espacio, se uniran como uno solo.
