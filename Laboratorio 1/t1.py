@@ -251,29 +251,29 @@ while len(naves)!=0:
     if calibre_arma == 1:
         print('\n'"¡La vieja confiable! ahora digame... ¿Cuáles son las coordenadas, cap?")
         
-        input_x=input('\n'"Ingrese la coordenada x (fila) en binario"'\n'"->")
+        input_x=input('\n'"Ingrese la coordenada y en binario"'\n'"->")
         while check_bin(input_x)==False:
             print("Oops, esta coordenada no es binaria, intentalo de nuevo")
-            input_x=input('\n'"Ingrese la coordenada x (fila) en binario"'\n'"->")
+            input_x=input('\n'"Ingrese la coordenada y en binario"'\n'"->")
 
-        input_y=input('\n'"Ingrese la coordenada y (columna) en binario"'\n'"->")
+        input_y=input('\n'"Ingrese la coordenada x en binario"'\n'"->")
         while check_bin(input_y)==False:
             print("Oops, esta coordenada no es binaria, intentalo de nuevo")
-            input_y=input('\n'"Ingrese la coordenada y (columna) en binario"'\n'"->")
+            input_y=input('\n'"Ingrese la coordenada x en binario"'\n'"->")
 
         coordenada=bin2dec(input_x,input_y)
 
     elif calibre_arma == 2:
         print('\n'"Nunca entendí porqué el simbolo de infinito, a no espera... ¡¿ES UN 8?! ahora digame... ¿Cuáles son las coordenadas, cap?"'\n')
-        input_x=input('\n'"Ingrese la coordenada x (fila) en Octal"'\n'"->")
+        input_x=input('\n'"Ingrese la coordenada y en Octal"'\n'"->")
         while check_oct(input_x)==False:
             print("Oops, esta coordenada no es octal, intentalo de nuevo")
-            input_x=input('\n'"Ingrese la coordenada x (fila) en Octal"'\n'"->")
+            input_x=input('\n'"Ingrese la coordenada y en Octal"'\n'"->")
         
-        input_y=input('\n'"Ingrese la coordenada y (columna) en Octal"'\n'"->")
+        input_y=input('\n'"Ingrese la coordenada x en Octal"'\n'"->")
         while check_oct(input_y)==False:
             print("Oops, esta coordenada no es octal, intentalo de nuevo")
-            input_y=input('\n'"Ingrese la coordenada y (columna) en Octal"'\n'"->")
+            input_y=input('\n'"Ingrese la coordenada x en Octal"'\n'"->")
         
         coordenada=oct2dec(input_x,input_y)
 
@@ -282,18 +282,18 @@ while len(naves)!=0:
         proceed = False
         while not proceed:
 
-            input_x=input('\n'"Ingrese la coordenada x (fila) en Hexadecimal"'\n'"->")
+            input_x=input('\n'"Ingrese la coordenada y en Hexadecimal"'\n'"->")
             while check_hex(input_x)==False:
                 print("Oops, esta coordenada no es hexadecimal, intentalo de nuevo")
-                input_x=(input('\n'"Ingrese la coordenada x (fila) en Hexadecimal"'\n'"->"))
+                input_x=(input('\n'"Ingrese la coordenada y en Hexadecimal"'\n'"->"))
             xlist= list(input_x)
             if ("x" in input_x):    #Formateo el 0x
                 input_x = "".join(xlist[2:len(input_x)])
             
-            input_y=input('\n'"Ingrese la coordenada y (columna) en Hexadecimal"'\n'"->")
+            input_y=input('\n'"Ingrese la coordenada x en Hexadecimal"'\n'"->")
             while check_hex(input_y)==False:
                 print("Oops, esta coordenada no es hexadecimal, intentalo de nuevo")
-                input_y=(input('\n'"Ingrese la coordenada y (columna) en Hexadecimal"'\n'"->"))
+                input_y=(input('\n'"Ingrese la coordenada x en Hexadecimal"'\n'"->"))
             ylist= list(input_y)
             if ("x" in input_y):    #Formateo el 0x
                 input_y = "".join(ylist[2:len(input_y)])
