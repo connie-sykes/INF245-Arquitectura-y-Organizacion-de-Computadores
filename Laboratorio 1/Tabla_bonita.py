@@ -172,7 +172,7 @@ def check_hex(input):
     abc = "abcdefABCDEF"
     dig = "0123456789"
     hexadecimal = list(input)
-    if (hexadecimal[0]=="0" and hexadecimal[1]=="x"):   #EVALUA EXISTENCIA 0X
+    if (len(input)>2) and (hexadecimal[0]=="0" and hexadecimal[1]=="x"):   #EVALUA EXISTENCIA 0X
             hexadecimal = hexadecimal[2:len(hexadecimal)]
 
     for i in hexadecimal:
@@ -186,8 +186,7 @@ def check_oct(input):
     *input: int, numero a corroborar su base
     ***
     Verifica que el input este compuesto solamente de digitos [0-7], 
-    en caso de ser asi retorna True, caso contrario
-    retorna False
+    en caso de ser asi retorna True, caso contrario retorna False
     '''
     base_octal="01234567"
     octal = list(input)
