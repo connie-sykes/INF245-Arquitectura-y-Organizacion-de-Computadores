@@ -298,8 +298,8 @@ while len(naves)!=0:
             ylist= list(input_y)
             if ("x" in input_y):    #Formateo el 0x
                 input_y = "".join(ylist[2:len(input_y)])
-                            
-            proceed == True
+            
+            proceed = True
         coordenada=hex2dec(input_x,input_y)
     
     golpe=acierto(coordenada,calibre_arma,juego,naves)
