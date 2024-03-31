@@ -2,7 +2,7 @@
 	Laboratorio 1 - Arquitectura y Organizacion de Computadores
 
     /*********************Integrantes********************\
->Alonso Fuenzalida, 202273556-2, paralelo 20x
+>Alonso Fuenzalida, 202273556-2, paralelo 200
 >Constanza Hidalgo, 202273617-8, paralelo 200
 
     /*******************Algoritmos usados**************\
